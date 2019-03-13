@@ -547,9 +547,13 @@ namespace UnityEngine.Experimental.Rendering.HDPipeline
                         var importer = AssetImporter.GetAtPath(file) as TextureImporter;
                         if (importer == null)
                             return;
-                        importer.sRGBTexture = false;
-                        importer.filterMode = FilterMode.Bilinear;
-                        importer.generateCubemap = TextureImporterGenerateCubemap.AutoCubemap;
+                        importer.SetTextureSettings(new TextureImporterSettings
+                        {
+                            sRGBTexture = false,
+                            filterMode = FilterMode.Bilinear,
+                            generateCubemap = TextureImporterGenerateCubemap.AutoCubemap,
+                            cubemapConvolution = TextureImporterCubemapConvolution.None
+                        });
                         importer.mipmapEnabled = false;
                         importer.textureCompression = hd.currentPlatformRenderPipelineSettings.lightLoopSettings.reflectionCacheCompressed
                             ? TextureImporterCompression.Compressed
