@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Fixed metric distance that changed along size in DensityVolume
 - Fixed DensityVolume shape handles that have not same behaviour in advance and normal edition mode
 - Fixed normal map blending in TerrainLit by only blending the derivatives### Changed
+- Fixed baked cubemap import settings for convolution
 
 ### Changed
 - DensityVolume scripting API will no longuer allow to change between advance and normal edition mode
